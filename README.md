@@ -2,7 +2,7 @@
 Take Home Project - Multi Value Dictionary Console Application
 
 # Build Requirements 
-ASP NET Core 2.1 or higher 
+ASP NET Core 3.1 or higher 
 
 # Build instructions
 This is a console application which can be run in the following ways - 
