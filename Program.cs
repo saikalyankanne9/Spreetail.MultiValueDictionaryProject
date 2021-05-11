@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 using Spreetail.MultiValueDictionary.Services.Implementation.v1;
 using Spreetail.MultiValueDictionary.Services.Interfaces.v1;
 using System;
