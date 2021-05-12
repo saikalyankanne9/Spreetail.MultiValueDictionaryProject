@@ -7,10 +7,10 @@ using System;
 
 namespace Spreetail.MultiValueDictionary
 {
-    public class Program
+    class Program
     {
         private static IServiceProvider _serviceProvider;
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             RegisterServices();
             IServiceScope scope = _serviceProvider.CreateScope();
