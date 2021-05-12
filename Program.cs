@@ -23,6 +23,7 @@ namespace Spreetail.MultiValueDictionary
             scope.ServiceProvider.GetRequiredService<Initializer>().Run();
             DisposeServices();
         }
+
         /// <summary>
         /// Registerting services for dependency injection
         /// </summary>
@@ -33,6 +34,7 @@ namespace Spreetail.MultiValueDictionary
             services.AddSingleton<Initializer>();
             _serviceProvider = services.BuildServiceProvider(true);
         }
+
         /// <summary>
         /// Disposing service
         /// </summary>

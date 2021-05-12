@@ -18,6 +18,7 @@ namespace Spreetail.MultiValueDictionary
         {
             _multiValueDictionary = multiValueDictionary;
         }
+
         /// <summary>
         /// Logic starts from here
         /// </summary>
