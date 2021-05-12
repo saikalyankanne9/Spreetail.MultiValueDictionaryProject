@@ -14,105 +14,105 @@ namespace Spreetail.MultiValueDictionary.Services.Implementation.v1.Tests
         [Test]
         public void TestAddAndGetAllMethod()
         {
-            IMultiValueDictionary<string, string> nvd = new MultiValueDictionaryImpl<string, string>();
-            nvd.Add("foo", "bar");
-            nvd.Add("baz", "bang");
-            Assert.AreEqual(nvd.GetAllMembers().Count, 2);
-            Assert.AreEqual(nvd.GetAllMembers().Contains("bar"), true);
-            Assert.AreEqual(nvd.GetAllMembers().Contains("bar2"), false);
+            IMultiValueDictionary<string, string> mvd = new MultiValueDictionaryImpl<string, string>();
+            mvd.Add("foo", "bar");
+            mvd.Add("baz", "bang");
+            Assert.AreEqual(mvd.GetAllMembers().Count, 2);
+            Assert.AreEqual(mvd.GetAllMembers().Contains("bar"), true);
+            Assert.AreEqual(mvd.GetAllMembers().Contains("bar2"), false);
         }
         [Test]
         public void TestAddMethodException()
         {
-            IMultiValueDictionary<string, string> nvd = new MultiValueDictionaryImpl<string, string>();
-            nvd.Add("foo", "bar");
-            Assert.Throws<Exception>(() => nvd.Add("foo", "bar"));
+            IMultiValueDictionary<string, string> mvd = new MultiValueDictionaryImpl<string, string>();
+            mvd.Add("foo", "bar");
+            Assert.Throws<Exception>(() => mvd.Add("foo", "bar"));
         }
         [Test]
         public void TestMembersMethod()
         {
-            IMultiValueDictionary<string, string> nvd = new MultiValueDictionaryImpl<string, string>();
-            nvd.Add("foo", "bar");
-            nvd.Add("foo", "bar2");
-            Assert.AreEqual(nvd.GetMembers("foo").Count, 2);
-            Assert.AreEqual(nvd.GetMembers("foo").Contains("bar"), true);
-            Assert.AreEqual(nvd.GetMembers("foo").Contains("bar4"), false);
+            IMultiValueDictionary<string, string> mvd = new MultiValueDictionaryImpl<string, string>();
+            mvd.Add("foo", "bar");
+            mvd.Add("foo", "bar2");
+            Assert.AreEqual(mvd.GetMembers("foo").Count, 2);
+            Assert.AreEqual(mvd.GetMembers("foo").Contains("bar"), true);
+            Assert.AreEqual(mvd.GetMembers("foo").Contains("bar4"), false);
         }
         [Test]
         public void TestMembersException()
         {
-            IMultiValueDictionary<string, string> nvd = new MultiValueDictionaryImpl<string, string>();
-            nvd.Add("foo", "bar");
-            nvd.Add("foo", "bar2");
-            Assert.Throws<Exception>(() => nvd.GetMembers("foo2"));
+            IMultiValueDictionary<string, string> mvd = new MultiValueDictionaryImpl<string, string>();
+            mvd.Add("foo", "bar");
+            mvd.Add("foo", "bar2");
+            Assert.Throws<Exception>(() => mvd.GetMembers("foo2"));
         }
         [Test]
         public void TestGetKeyMethod()
         {
-            IMultiValueDictionary<string, string> nvd = new MultiValueDictionaryImpl<string, string>();
-            nvd.Add("foo", "bar");
-            nvd.Add("foo3", "bar2");
-            Assert.AreEqual(nvd.GetKeys().Count, 2);
-            Assert.AreEqual(nvd.GetKeys().Contains("foo"), true);
-            Assert.AreEqual(nvd.GetKeys().Contains("foo2"), false);
+            IMultiValueDictionary<string, string> mvd = new MultiValueDictionaryImpl<string, string>();
+            mvd.Add("foo", "bar");
+            mvd.Add("foo3", "bar2");
+            Assert.AreEqual(mvd.GetKeys().Count, 2);
+            Assert.AreEqual(mvd.GetKeys().Contains("foo"), true);
+            Assert.AreEqual(mvd.GetKeys().Contains("foo2"), false);
         }
         [Test]
         public void TestRemoveAllMethod()
         {
-            IMultiValueDictionary<string, string> nvd = new MultiValueDictionaryImpl<string, string>();
-            nvd.Add("foo", "bar");
-            nvd.Add("foo3", "bar2");
-            nvd.RemoveAll("foo3");
-            Assert.AreEqual(nvd.GetKeys().Count, 1);
+            IMultiValueDictionary<string, string> mvd = new MultiValueDictionaryImpl<string, string>();
+            mvd.Add("foo", "bar");
+            mvd.Add("foo3", "bar2");
+            mvd.RemoveAll("foo3");
+            Assert.AreEqual(mvd.GetKeys().Count, 1);
         }
         [Test]
         public void TestRemoveAllException()
         {
-            IMultiValueDictionary<string, string> nvd = new MultiValueDictionaryImpl<string, string>();
-            Assert.Throws<Exception>(() => nvd.RemoveAll("foo3"));
+            IMultiValueDictionary<string, string> mvd = new MultiValueDictionaryImpl<string, string>();
+            Assert.Throws<Exception>(() => mvd.RemoveAll("foo3"));
         }
         [Test]
         public void TestClearMethod()
         {
-            IMultiValueDictionary<string, string> nvd = new MultiValueDictionaryImpl<string, string>();
-            nvd.Add("foo", "bar");
-            nvd.Add("foo3", "bar2");
-            nvd.Clear();
-            Assert.AreEqual(nvd.GetKeys().Count, 0);
+            IMultiValueDictionary<string, string> mvd = new MultiValueDictionaryImpl<string, string>();
+            mvd.Add("foo", "bar");
+            mvd.Add("foo3", "bar2");
+            mvd.Clear();
+            Assert.AreEqual(mvd.GetKeys().Count, 0);
         }
         [Test]
         public void TestItemsMethod()
         {
-            IMultiValueDictionary<string, string> nvd = new MultiValueDictionaryImpl<string, string>();
-            nvd.Add("foo", "bar");
-            nvd.Add("foo3", "bar2");
-            Assert.AreEqual(nvd.GetItems().Count, 2);
+            IMultiValueDictionary<string, string> mvd = new MultiValueDictionaryImpl<string, string>();
+            mvd.Add("foo", "bar");
+            mvd.Add("foo3", "bar2");
+            Assert.AreEqual(mvd.GetItems().Count, 2);
         }
         [Test]
         public void TestAllMembersMethod()
         {
-            IMultiValueDictionary<string, string> nvd = new MultiValueDictionaryImpl<string, string>();
-            nvd.Add("foo", "bar");
-            nvd.Add("foo3", "bar2");
-            Assert.AreEqual(nvd.GetAllMembers().Count, 2);
-            Assert.AreEqual(nvd.GetAllMembers().Contains("bar"), true);
-            Assert.AreEqual(nvd.GetAllMembers().Contains("foo5"), false);
+            IMultiValueDictionary<string, string> mvd = new MultiValueDictionaryImpl<string, string>();
+            mvd.Add("foo", "bar");
+            mvd.Add("foo3", "bar2");
+            Assert.AreEqual(mvd.GetAllMembers().Count, 2);
+            Assert.AreEqual(mvd.GetAllMembers().Contains("bar"), true);
+            Assert.AreEqual(mvd.GetAllMembers().Contains("foo5"), false);
         }
         [Test]
         public void TestKeyExistMethod()
         {
-            IMultiValueDictionary<string, string> nvd = new MultiValueDictionaryImpl<string, string>();
-            nvd.Add("foo", "bar");
-            nvd.Add("foo3", "bar2");
-            Assert.AreEqual(nvd.CheckKeyExists("foo3"), true);
+            IMultiValueDictionary<string, string> mvd = new MultiValueDictionaryImpl<string, string>();
+            mvd.Add("foo", "bar");
+            mvd.Add("foo3", "bar2");
+            Assert.AreEqual(mvd.CheckKeyExists("foo3"), true);
         }
         [Test]
         public void TestValueExistMethod()
         {
-            IMultiValueDictionary<string, string> nvd = new MultiValueDictionaryImpl<string, string>();
-            nvd.Add("foo", "bar");
-            nvd.Add("foo3", "bar2");
-            Assert.AreEqual(nvd.CheckValueExists("foo", "bar"), true);
+            IMultiValueDictionary<string, string> mvd = new MultiValueDictionaryImpl<string, string>();
+            mvd.Add("foo", "bar");
+            mvd.Add("foo3", "bar2");
+            Assert.AreEqual(mvd.CheckValueExists("foo", "bar"), true);
         }
     }
 }

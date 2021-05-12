@@ -7,9 +7,15 @@ using System;
 
 namespace Spreetail.MultiValueDictionary
 {
+    /// <summary>
+    /// Program class
+    /// </summary>
     class Program
     {
         private static IServiceProvider _serviceProvider;
+        /// <summary>
+        /// Main entry into class
+        /// </summary>
         public static void Main(string[] args)
         {
             RegisterServices();
@@ -17,6 +23,9 @@ namespace Spreetail.MultiValueDictionary
             scope.ServiceProvider.GetRequiredService<Initializer>().Run();
             DisposeServices();
         }
+        /// <summary>
+        /// Registerting services for dependency injection
+        /// </summary>
         private static void RegisterServices()
         {
             var services = new ServiceCollection();
@@ -24,6 +33,9 @@ namespace Spreetail.MultiValueDictionary
             services.AddSingleton<Initializer>();
             _serviceProvider = services.BuildServiceProvider(true);
         }
+        /// <summary>
+        /// Disposing service
+        /// </summary>
         private static void DisposeServices()
         {
             if (_serviceProvider == null)

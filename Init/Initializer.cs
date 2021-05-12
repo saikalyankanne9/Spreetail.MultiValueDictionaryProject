@@ -5,14 +5,22 @@ using System.Text;
 
 namespace Spreetail.MultiValueDictionary
 {
+    /// <summary>
+    /// Initializer class 
+    /// </summary>
     public class Initializer
     {
         private readonly IMultiValueDictionary<string,string> _multiValueDictionary;
+        /// <summary>
+        /// Constructor for injecting multiValueDictionary object
+        /// </summary>
         public Initializer(IMultiValueDictionary<string,string> multiValueDictionary)
         {
             _multiValueDictionary = multiValueDictionary;
         }
-
+        /// <summary>
+        /// Logic starts from here
+        /// </summary>
         public void Run()
         {
             Util.Util.ShowOperationList();
